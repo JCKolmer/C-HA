@@ -6,14 +6,11 @@ uint64_t factorial(uint64_t val) {
     {
         return 1;
     }
-    uint64_t a{1};
-    uint64_t i = 1;
-    while(i < val)
-    {
-        i++;
-        a = a * i;
-    }
-    return a;
+    uint64_t factorial = 1;
+   for(int i = 1; i <= val; ++i) {
+            factorial *= i;
+        }
+    return factorial;
 }
 
 
