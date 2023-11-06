@@ -17,6 +17,5 @@ void test_contact_list() {
 
 int main() {
     contact_list::test_contact_list();
-
     return 0;
 }

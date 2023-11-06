@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/jojo/JoaquimK_tasks/hw03/hw03",
+  "command": "/usr/bin/g++   -I/home/jojo/JoaquimK_tasks/hw03  -g   -Wall -Wextra -Wconversion -pedantic -Wfatal-errors -std=c++2a -o CMakeFiles/runhw03.dir/run.cpp.o -c /home/jojo/JoaquimK_tasks/hw03/run.cpp",
+  "file": "/home/jojo/JoaquimK_tasks/hw03/run.cpp"
+},
+{
+  "directory": "/home/jojo/JoaquimK_tasks/hw03/hw03",
+  "command": "/usr/bin/g++  -Dhw03_EXPORTS -I/home/jojo/JoaquimK_tasks/hw03  -g -fPIC   -Wall -Wextra -Wconversion -pedantic -Wfatal-errors -std=c++2a -o CMakeFiles/hw03.dir/contact_list.cpp.o -c /home/jojo/JoaquimK_tasks/hw03/contact_list.cpp",
+  "file": "/home/jojo/JoaquimK_tasks/hw03/contact_list.cpp"
+}
+]
