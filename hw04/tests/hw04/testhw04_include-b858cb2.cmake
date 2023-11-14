@@ -1,0 +1,5 @@
+if(EXISTS "/home/jojo/JoaquimK_tasks/hw04/tests/hw04/testhw04_tests-b858cb2.cmake")
+  include("/home/jojo/JoaquimK_tasks/hw04/tests/hw04/testhw04_tests-b858cb2.cmake")
+else()
+  add_test(testhw04_NOT_BUILT-b858cb2 testhw04_NOT_BUILT-b858cb2)
+endif()

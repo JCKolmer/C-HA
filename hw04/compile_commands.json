@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/jojo/JoaquimK_tasks/hw04/hw04",
+  "command": "/usr/bin/g++   -I/home/jojo/JoaquimK_tasks/hw04  -g   -Wall -Wextra -Wconversion -pedantic -Wfatal-errors -std=c++2a -o CMakeFiles/runhw04.dir/run.cpp.o -c /home/jojo/JoaquimK_tasks/hw04/run.cpp",
+  "file": "/home/jojo/JoaquimK_tasks/hw04/run.cpp"
+},
+{
+  "directory": "/home/jojo/JoaquimK_tasks/hw04/hw04",
+  "command": "/usr/bin/g++   -I/home/jojo/JoaquimK_tasks/hw04  -g   -Wall -Wextra -Wconversion -pedantic -Wfatal-errors -std=c++2a -o CMakeFiles/hw04.dir/vm.cpp.o -c /home/jojo/JoaquimK_tasks/hw04/vm.cpp",
+  "file": "/home/jojo/JoaquimK_tasks/hw04/vm.cpp"
+},
+{
+  "directory": "/home/jojo/JoaquimK_tasks/hw04/hw04",
+  "command": "/usr/bin/g++   -I/home/jojo/JoaquimK_tasks/hw04  -g   -Wall -Wextra -Wconversion -pedantic -Wfatal-errors -std=c++2a -o CMakeFiles/hw04.dir/util.cpp.o -c /home/jojo/JoaquimK_tasks/hw04/util.cpp",
+  "file": "/home/jojo/JoaquimK_tasks/hw04/util.cpp"
+}
+]
