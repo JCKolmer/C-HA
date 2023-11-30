@@ -234,13 +234,13 @@ std::size_t argmin(const Vector &x)
         throw std::invalid_argument("Vector is empty");
     }
     float min = x[1];
-    std::size_t minimalIndex = 1;
+    std::size_t minimalIndex = 0;
     for (int i = 0; i<x.size(); i++)
     {
         if (x[i]<min)
         {
             min = x[i];
-            minimalIndex = i + 1;
+            minimalIndex = i;
         }
     }
     return minimalIndex;
@@ -253,13 +253,13 @@ std::size_t argmax(const Vector &x)
         throw std::invalid_argument("Vector is empty");
     }
     float max = x[1];
-    std::size_t maximalIndex = 1;
+    std::size_t maximalIndex = 0;
     for (int i = 0; i<x.size(); i++)
     {
         if (x[i]<max)
         {
             max = x[i];
-            maximalIndex = i + 1;
+            maximalIndex = i;
         }
     }
     return maximalIndex;
