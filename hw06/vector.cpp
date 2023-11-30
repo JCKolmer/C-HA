@@ -2,6 +2,7 @@
 
 #include <iterator>
 #include <math.h>
+#include <iostream>
 
 
 namespace linalg {
@@ -90,7 +91,7 @@ auto operator<<(std::ostream& ostr, const Vector& x) -> std::ostream& {
         }
         else
         {
-            return data_[idx-1];
+            return data_[idx];
         }
     }
 
@@ -102,7 +103,7 @@ auto operator<<(std::ostream& ostr, const Vector& x) -> std::ostream& {
         }
         else
         {
-            return data_[data_.size()+idx];
+            return data_[idx];
         }
     }
 
@@ -118,34 +119,34 @@ auto operator<<(std::ostream& ostr, const Vector& x) -> std::ostream& {
 
     Vector& Vector::operator+=(float val)
     {
-        for (float f : data_)
+       for(int i=0; i<data_.size(); i++)
         {
-            f = f + val;
+            data_[i] = data_[i] + val;
         }
         return *this;
     }
 
     Vector& Vector::operator-=(float val)
     {
-         for (float f : data_)
+        for(int i=0; i<data_.size(); i++)
         {
-            f = f - val;
+            data_[i] = data_[i] - val;
         }
         return *this;
     }
 
     Vector& Vector::operator*=(float val){
-        for (float f : data_)
+        for(int i=0; i<data_.size(); i++)
         {
-            f = f * val;
+            data_[i] = data_[i] * val;
         }
         return *this;
     }
 
     Vector& Vector::operator/=(float val){
-         for (float f : data_)
+         for(int i=0; i<data_.size(); i++)
         {
-            f = f / val;
+            data_[i] = data_[i] / val;
         }
         return *this;
     }
@@ -171,7 +172,7 @@ auto operator<<(std::ostream& ostr, const Vector& x) -> std::ostream& {
         }
         for(int i = 0; i<y.size();i++)
         {
-            data_[i] = y[i] - data_[i];
+            data_[i] = data_[i] - y.operator[](i);
         }
         return *this;
     };
@@ -321,6 +322,7 @@ Vector normalized(const Vector &x)
 
 Vector floor(const Vector &x) {
     Vector erg = Vector(x.size(),0);
+    erg.assign(x);
     for (int i = 0; i<x.size(); i++)
     {
         erg[i] = std::floor(x[i]);
@@ -331,6 +333,7 @@ Vector floor(const Vector &x) {
 Vector ceil(const Vector &x)
 {
     Vector erg = Vector(x.size(),0);
+    erg.assign(x);
     for (int i = 0; i<x.size(); i++)
     {
         erg[i] = std::ceil(x[i]);

@@ -10,6 +10,8 @@ linalg::Vector normalize_to_range(const linalg::Vector &x) {
     auto xmin{linalg::min(x)};
     auto xmax{linalg::max(x)};
     return (x - xmin) / (xmax - xmin);
+    // x-xmin: 5.37--0.98 = 6,4, 0 
+    // max-min: 6,4
 }
 
 int main() {
@@ -31,6 +33,7 @@ int main() {
         1.26010647f, 0.47898897f, 1.0131508f,
         1.14035223f
     });
+
 
     std::cout << "Given a vector x: " << x << "\n";
     std::cout << "And a vector y: " << y << "\n";
