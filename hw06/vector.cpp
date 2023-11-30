@@ -109,11 +109,27 @@ auto operator<<(std::ostream& ostr, const Vector& x) -> std::ostream& {
 
     float& Vector::coeff(int idx)
     {
+        if(idx<0)
+        {
+            throw std::out_of_range("id out of range");
+        }
+        if(idx>(data_.size()-1))
+        {
+            throw std::out_of_range("id out of range");
+        }
         return data_[idx];
     }
 
     const float& Vector::coeff(int idx) const
     {
+        if(idx<0)
+        {
+            throw std::out_of_range("id out of range");
+        }
+        if(idx>(data_.size()-1))
+        {
+            throw std::out_of_range("id out of range");
+        }
         return data_[idx];
     }
 
