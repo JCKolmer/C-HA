@@ -109,12 +109,12 @@ auto operator<<(std::ostream& ostr, const Vector& x) -> std::ostream& {
 
     float& Vector::coeff(int idx)
     {
-        return data_.at(idx-1);
+        return data_[idx];
     }
 
     const float& Vector::coeff(int idx) const
     {
-        return data_.at(idx-1);
+        return data_[idx];
     }
 
     Vector& Vector::operator+=(float val)

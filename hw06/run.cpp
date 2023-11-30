@@ -33,6 +33,12 @@ int main() {
         1.26010647f, 0.47898897f, 1.0131508f,
         1.14035223f
     });
+    const linalg::Vector t1();
+    std::cout << "Given a vector t1: " << t1 << "\n";
+    const linalg::Vector t2(6);
+    std::cout << "Given a vector t2: " << t2 << "\n";
+    const linalg::Vector t3(6,3);
+    std::cout << "Given a vector t3: " << t3 << "\n";
 
 
     std::cout << "Given a vector x: " << x << "\n";
