@@ -371,6 +371,7 @@ Vector operator-(const Vector &x)
     {
         erg[i] = -x[i];
     }
+
     return erg;
 }
 
@@ -427,6 +428,7 @@ Vector operator-(float val, const Vector &x) {
     Vector erg = Vector(x.size(),0);
     erg.assign(x);
     erg.operator-=(val);
+    erg = -erg;
     return erg;
 }
 

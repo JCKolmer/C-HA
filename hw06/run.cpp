@@ -34,6 +34,8 @@ int main() {
         1.14035223f
     });
 
+
+
     std::cout << "Given a vector x: " << x << "\n";
     std::cout << "And a vector y: " << y << "\n";
     std::cout << "The distance between them is: " << distance(x, y) << "\n";
