@@ -256,7 +256,7 @@ std::size_t argmax(const Vector &x)
     std::size_t maximalIndex = 0;
     for (int i = 0; i<x.size(); i++)
     {
-        if (x[i]<max)
+        if (x[i]>max)
         {
             max = x[i];
             maximalIndex = i;
@@ -288,7 +288,7 @@ float sum(const Vector &x) {
 }
 
 float prod(const Vector &x) {
-    float prod = 0;
+    float prod = 1;
     for(float f : x)
     {
         prod = prod * f;
