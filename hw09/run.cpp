@@ -8,6 +8,7 @@ int main() {
     std::cout << v << std::endl;
     v.push_back(3);
     int item{4};
+     std::cout << "Hello /n " << std::endl;
     v.push_back(std::move(item));
     std::cout << v << std::endl;
     v.pop_back();
