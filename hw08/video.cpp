@@ -4,6 +4,10 @@ Video::Video(FileContent &&content, resolution_t resolution, double duration)
     : File{std::move(content)}, resolution{resolution}, duration{duration} {}
 
 // TODO implement get_type function
+std::string_view File::get_type() const {
+  std::string_view type {"VID"};
+  return type;
+}
 
 size_t Video::get_raw_size() const {
   // TODO size of raw 30 FPS RGB color video

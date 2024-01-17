@@ -2,6 +2,8 @@
 
 #include <optional>
 #include <string_view>
+#include <cstring>
+#include <iostream>
 
 namespace bencode {
 // TODO: Implement int parsing for the bencode fromat
@@ -21,7 +23,48 @@ namespace bencode {
 // - Handle empty string
 // - Handle if a non-digit number is between 'i' and 'e'
 consteval std::optional<int> parse_int(std::string_view str) {
-    return {};
+    int n = str.size();
+    int result = 0;
+    bool minus = false;
+    if(str.at(0) != 'i')
+    {
+        return {};
+    }
+    if(str.at(str.size()-1)!='e')
+    {
+        return {};
+    }
+    if(str.size() < 0)
+    {
+        return {};
+    }
+    
+    str.remove_suffix(1);
+    str.remove_prefix(1);
+        if(str.size()==0)
+        {
+            return {};
+        }
+        if(str.at(0) == '-')
+        {
+            minus = true;
+            str.remove_prefix(1);
+        }
+        for(int i=0; i < str.size(); i++)
+        {
+            int num = str.at(i);
+            num = num - 48;
+            if((num < 0) || (num > 9))
+            {
+                return {};
+            }
+           result = result * 10 + num;
+        }
+        if(minus)
+        {
+            result = -result;
+        }
+        return result;
 }
 
 // TODO: Implement byte string parsing for the bencode fromat
@@ -42,6 +85,30 @@ consteval std::optional<int> parse_int(std::string_view str) {
 // - It is NOT valid for the string to be shorter than the specified length
 // - The string may contain colons
 consteval std::optional<std::string_view> parse_byte_string(std::string_view str) {
-    return {};
+    int n = str.size();
+     if(n <= 0)
+    {
+        return {};
+    }
+    int num = 0;
+    int j=0;
+    for(j=0;j<n;j++)
+    {
+        int ziffer = str.at(j) - '0';
+        if((ziffer < 0) || (ziffer > 9))
+            {
+                if(str.at(j) == ':')
+                {
+                    break;
+                }
+                return {};
+            }
+        num = num * 10 + ziffer;
+    }
+    if(num > n-2)
+    {
+        return {};
+    }
+    return str.substr(j+1,num);
 }
 } // namespace bencode

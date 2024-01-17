@@ -29,5 +29,7 @@ public:
     bool operator ==(const FileContent &) const = default;
 
 protected:
+    std::shared_ptr<std::string> content_;
+
     // TODO store shareable file content
 };

@@ -10,22 +10,22 @@
 //
 
 template <typename T1>
-constexpr T1 gcd(T1 a, T1 b) 
+constexpr T1 gcd( T1 a,  T1 b) 
 { 
-    constexpr T1 result = std::min(a, b); 
+    T1 result = std::min(a, b); 
     while (result > 0) { 
         if (a % result == 0 && b % result == 0) { 
-            break; 
+            break;
         } 
-        result--; 
+        result--;
     } 
     return result; 
 } 
 template <typename T1, typename ... T>
 constexpr T1 gcd(T1 var1, T1 var2, const T... args) {
-    if constexpr (sizeof...(args)>0)
+    if (sizeof...(args)>0)
     {
-        return gcd(gcd(var1,var2), args);
+        return gcd(gcd(var1,var2), args...);
     }
     return gcd(var1,var2);
 }
@@ -39,7 +39,7 @@ constexpr T1 gcd(T1 var1, T1 var2, const T... args) {
 template <typename T1>
 constexpr T1 mcm(T1 a, T1 b)
 {
-    if(a==0 & b==0)
+    if((a==0) & (b==0))
     {
         return 0;
     }
@@ -53,9 +53,9 @@ constexpr T1 mcm(T1 a, T1 b)
 }
 template <typename T1, typename ... T>
 constexpr T1 mcm(T1 var1, T1 var2, const T... args) {
-    if constexpr (sizeof...(args)>0)
+    if (sizeof...(args)>0)
     {
-        return mcm(mcm(var1,var2), args);
+        return mcm(mcm(var1,var2), args...);
     }
     return mcm(var1,var2);
 }
@@ -65,3 +65,19 @@ constexpr T1 mcm(T1 var1, T1 var2, const T... args) {
 // I.e. it needs a compile time evaluation `value`, which holds the result of
 // the computation.
 // Think about your base cases
+template <unsigned base, unsigned exponent, unsigned modulus>
+struct Power {
+    static constexpr unsigned value = (Power<base, exponent - 1, modulus>::value * base) % modulus;
+};
+
+template<unsigned exponent, unsigned modulos>
+struct Power<0, exponent, modulos>
+{
+    static constexpr unsigned value = 0;
+};
+
+template<unsigned base, unsigned modulos>
+struct Power<base, 0, modulos>
+{
+    static constexpr unsigned value = 1 % modulos;
+};
