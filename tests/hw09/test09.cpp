@@ -266,7 +266,7 @@ TEST_CASE_TEMPLATE("push_back", T, bool, char, short, int,
     }
 }
 
- TEST_CASE("String push_back")
+TEST_CASE("String push_back")
 {
     Vector<std::string> v = Vector<std::string>();
     CHECK_EQ(v.size(), 0);
@@ -276,7 +276,6 @@ TEST_CASE_TEMPLATE("push_back", T, bool, char, short, int,
         CHECK_EQ(v.size(), i + 1);
     }
 }
-
 
 TEST_CASE_TEMPLATE("pop_back", T, bool, char, short, int,
     long long int, float, double)
@@ -392,7 +391,6 @@ TEST_CASE("Iterate from beginning to end (ints)")
 
     SUBCASE("iterate with begin and end")
     {
-        
         Vector<int> v({1, 2, 3, 4, 5});
         CHECK_EQ(v.size(), 5);
 
