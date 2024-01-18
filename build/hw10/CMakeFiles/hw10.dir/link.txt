@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhw10.a  CMakeFiles/hw10.dir/quadruple.cpp.o CMakeFiles/hw10.dir/primes.cpp.o CMakeFiles/hw10.dir/bencode.cpp.o
+/usr/bin/ranlib libhw10.a

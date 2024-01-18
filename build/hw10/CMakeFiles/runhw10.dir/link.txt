@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/runhw10.dir/run.cpp.o  -o runhw10  libhw10.a 

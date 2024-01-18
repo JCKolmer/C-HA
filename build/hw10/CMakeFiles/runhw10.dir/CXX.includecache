@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jojo/JoaquimK_tasks/hw10/bencode.h
+optional
+-
+string_view
+-
+cstring
+-
+iostream
+-
+
+/home/jojo/JoaquimK_tasks/hw10/hw10.h
+primes.h
+/home/jojo/JoaquimK_tasks/hw10/primes.h
+quadruple.h
+/home/jojo/JoaquimK_tasks/hw10/quadruple.h
+bencode.h
+/home/jojo/JoaquimK_tasks/hw10/bencode.h
+
+/home/jojo/JoaquimK_tasks/hw10/primes.h
+cmath
+-
+
+/home/jojo/JoaquimK_tasks/hw10/quadruple.h
+array
+-
+
+/home/jojo/JoaquimK_tasks/hw10/run.cpp
+iostream
+-
+string
+-
+bencode.h
+/home/jojo/JoaquimK_tasks/hw10/bencode.h
+hw10.h
+/home/jojo/JoaquimK_tasks/hw10/hw10.h
+
